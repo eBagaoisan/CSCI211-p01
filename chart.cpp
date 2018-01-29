@@ -1,49 +1,59 @@
 // chart.cpp
 // Bagaoisan, ElmerPeter
-
 #include <iostream>
 #include <string>
-#include <array>
-
 using namespace std;
 
 //Prototypes
-int largest(int big[]&);
-
+int largest(int []);
+void printArray(int []);
+void printStar(int []);
 //global
 const int MAX = 100;
-int big = 0;
+int big = 0;//HOLDS BIGGEST VALUE INPUT BY THE USER
+int userNum;//USER INPUT
+int values[MAX];//MAIN ARRAY
+int counter = 0;//INDICES USED
 
 //main function
 int main(){
-    int userNum = 1;
-    int values[MAX];
-    while (userNum != 0){
+    int endArray = 0;
+    //BEGIN OF USER INPUT--------------------------------------------------
+    do{
         cout<<"Please enter numbers of asterisk: ";
         cin>>userNum;
         if(userNum <= MAX){
-            //asdf
+            values[endArray] = userNum;
+            endArray++;
         }
-        else if(userNum >= 0){
+        else if(userNum < 0){
             cout<<"Please enter a positive number."<<endl;
         }
         else{
             cout<<"Number is too large"<<endl;
         }
+    }while (userNum != 0);
+    //END OF USER INPUT----------------------------------------------------
+
+    //Area of code counts how many indices of the array is used
+    //---------------------------------------------------------------------
+    int valueSize=1;
+    while (valueSize != 0){
+        valueSize = values[counter];
+        counter++;
     }
-
-    //puts user number into array
-    for (int i=0; i<userNum; i++){
-
-    }
-
+    counter--;
+    //---------------------------------------------------------------------
+    printArray(values);
+    cout<<"Spaces used: "<<counter<<endl;
+    cout<<largest(values)<<endl;
     return 0;
 }
 
 //largest number function
 int largest(int numArr[]){
-    for (int i = 0; i < numArr.size(); i++){
-        if (numArr[i] < big){
+    for (int i = 0; i < counter; i++){
+        if (numArr[i] > big){
             big = numArr[i];
         }
     }
@@ -56,6 +66,19 @@ void apply(int arr[], int input){
     
 }
 
+void printStar(int starr[]){
+    for (int i = 0; i<counter; i++){
+        for (int j = 0; j<largest(starr); j++){
+                
+        }
+    }
+}
 
 //Printing function
+void printArray(int arr[]){
+    for (int i = 0; i<counter; i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl; 
+}
 
