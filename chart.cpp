@@ -21,17 +21,12 @@ int main(){
     int endArray = 0;
     //BEGINNING OF USER INPUT-----------------------------------------------
     do{
-        //cout<<"Please enter numbers of asterisk: ";
         cin>>userNum;
         if(userNum <= MAX){
             values[endArray] = userNum;
             endArray++;
         }
-        else if(userNum < 0){
-            //cout<<"Please enter a positive number."<<endl;
-        }
         else{
-            //cout<<"Number is too large"<<endl;
         }
     }while (userNum != 0);
     //END OF USER INPUT----------------------------------------------------
@@ -45,12 +40,8 @@ int main(){
     }
     counter--;
     //---------------------------------------------------------------------
-    //Use of functions
-    //printArray(values);
+    //Use of Asterisk printing function
     printStar(values);
-    //cout<<"Spaces used: "<<counter<<endl;
-    //cout<<largest(values)<<endl;
-    return 0;
 }
 
 //Getter function for the largest user input number
@@ -81,13 +72,4 @@ void printStar(int starr[]){
         cout<<endl;
     }
 }
-/*
-//Printing function
-void printArray(int arr[]){
-    for (int i = 0; i<counter; i++){
-        cout<<arr[i]<<" ";
-    }
-    cout<<endl; 
-}
-*/
 
