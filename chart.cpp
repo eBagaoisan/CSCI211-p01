@@ -45,6 +45,7 @@ int main(){
     counter--;
     //---------------------------------------------------------------------
     printArray(values);
+    printStar(values);
     cout<<"Spaces used: "<<counter<<endl;
     cout<<largest(values)<<endl;
     return 0;
@@ -59,18 +60,23 @@ int largest(int numArr[]){
     }
     return big;
 }
-
-//array insert
-//parameters: value array and user input
-void apply(int arr[], int input){
-    
-}
-
+//Asterisk Printing Function;
 void printStar(int starr[]){
-    for (int i = 0; i<counter; i++){
-        for (int j = 0; j<largest(starr); j++){
-                
+    int row = counter;
+    int col = largest(starr);
+    for (int c = 0; c<col; c++){
+        for (int r = 0; r<row; r++){
+            if (starr[r] == largest(starr)){
+                cout<<"*";
+            }
+            else if(starr[r] < starr[c]){
+                cout<<"*";
+            }
+            else{
+                cout<<" ";
+            }
         }
+        cout<<endl;
     }
 }
 
