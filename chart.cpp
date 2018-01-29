@@ -8,7 +8,8 @@ using namespace std;
 int largest(int []);
 void printArray(int []);
 void printStar(int []);
-//global
+
+//Global Variables
 const int MAX = 100;
 int big = 0;//HOLDS BIGGEST VALUE INPUT BY THE USER
 int userNum;//USER INPUT
@@ -18,7 +19,7 @@ int counter = 0;//INDICES USED
 //main function
 int main(){
     int endArray = 0;
-    //BEGIN OF USER INPUT--------------------------------------------------
+    //BEGINNING OF USER INPUT-----------------------------------------------
     do{
         cout<<"Please enter numbers of asterisk: ";
         cin>>userNum;
@@ -35,7 +36,7 @@ int main(){
     }while (userNum != 0);
     //END OF USER INPUT----------------------------------------------------
 
-    //Area of code counts how many indices of the array is used
+    //Area of code that counts how many indices of the array is used
     //---------------------------------------------------------------------
     int valueSize=1;
     while (valueSize != 0){
@@ -44,6 +45,7 @@ int main(){
     }
     counter--;
     //---------------------------------------------------------------------
+    //Use of functions
     printArray(values);
     printStar(values);
     cout<<"Spaces used: "<<counter<<endl;
@@ -51,7 +53,7 @@ int main(){
     return 0;
 }
 
-//largest number function
+//Getter function for the largest user input number
 int largest(int numArr[]){
     for (int i = 0; i < counter; i++){
         if (numArr[i] > big){
@@ -60,7 +62,7 @@ int largest(int numArr[]){
     }
     return big;
 }
-//Asterisk Printing Function;
+//Asterisk Printing Function
 void printStar(int starr[]){
     int row = counter;
     int col = largest(starr);
