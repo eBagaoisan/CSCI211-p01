@@ -63,10 +63,10 @@ void printStar(int starr[]){
                 cout<<"*";
             }
             else if(starr[r] < starr[c]){
-                cout<<"*";
+                cout<<" ";
             }
             else{
-                cout<<" ";
+                cout<<"*";
             }
         }
         cout<<endl;
