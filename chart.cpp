@@ -57,12 +57,12 @@ int largest(int numArr[]){
 void printStar(int starr[]){
     int row = counter;
     int col = largest(starr);
-    for (int c = 0; c<col; c++){//int c
+    for (int c = col-1; c>=0; c--){//int c
         for (int r = 0; r<row; r++){//int r counts each indice of the array
             if (starr[r] == largest(starr)){
                 cout<<"*";
             }
-            else if(starr[r] < starr[c]){
+            else if(starr[c] > starr[r]){
                 cout<<" ";
             }
             else{
